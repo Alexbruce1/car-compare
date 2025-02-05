@@ -23,7 +23,6 @@ const CarDetails = ({ make, model, year }) => {
 
         const vehicleId = vehicleList[0].getElementsByTagName("value")[0].textContent;
 
-        // Fetch detailed vehicle data
         const detailsResponse = await fetch(`https://www.fueleconomy.gov/ws/rest/vehicle/${vehicleId}`);
         const detailsText = await detailsResponse.text();
         const detailsXml = parser.parseFromString(detailsText, "text/xml");
